@@ -165,13 +165,13 @@ class _MainNavigationState extends State<MainNavigation> {
                       isDarkMode
                           ? 'assets/icons/not_selected_convert.png'
                           : 'assets/icons/selected_convert.png',
-                      width: 24,
-                      height: 24,
+                      width: _calculateRailIconSize(context),
+                      height: _calculateRailIconSize(context),
                     ),
                     selectedIcon: Image.asset(
                       'assets/icons/selected_convert.png',
-                      width: 24,
-                      height: 24,
+                      width: _calculateRailIconSize(context),
+                      height: _calculateRailIconSize(context),
                     ),
                     label: Text(L.tr('navigation.convert')),
                   ),
@@ -180,13 +180,13 @@ class _MainNavigationState extends State<MainNavigation> {
                       isDarkMode
                           ? 'assets/icons/not_selected_chart.png'
                           : 'assets/icons/selected_chart.png',
-                      width: 24,
-                      height: 24,
+                      width: _calculateRailIconSize(context),
+                      height: _calculateRailIconSize(context),
                     ),
                     selectedIcon: Image.asset(
                       'assets/icons/selected_chart.png',
-                      width: 24,
-                      height: 24,
+                      width: _calculateRailIconSize(context),
+                      height: _calculateRailIconSize(context),
                     ),
                     label: Text(L.tr('navigation.charts')),
                   ),
@@ -195,18 +195,21 @@ class _MainNavigationState extends State<MainNavigation> {
                       isDarkMode
                           ? 'assets/icons/not_selected_currency.png'
                           : 'assets/icons/selected_currency.png',
-                      width: 24,
-                      height: 24,
+                      width: _calculateRailIconSize(context),
+                      height: _calculateRailIconSize(context),
                     ),
                     selectedIcon: Image.asset(
                       'assets/icons/selected_currency.png',
-                      width: 24,
-                      height: 24,
+                      width: _calculateRailIconSize(context),
+                      height: _calculateRailIconSize(context),
                     ),
                     label: Text(L.tr('navigation.currencies')),
                   ),
                   NavigationRailDestination(
-                    icon: const Icon(Icons.settings),
+                    icon: Icon(
+                      Icons.settings,
+                      size: _calculateRailIconSize(context),
+                    ),
                     label: Text(L.tr('navigation.settings')),
                   ),
                 ],
@@ -232,9 +235,18 @@ class _MainNavigationState extends State<MainNavigation> {
       builder: (context, localizationProvider, _) {
         final theme = Theme.of(context);
         final isDarkMode = theme.brightness == Brightness.dark;
+        final screenHeight = MediaQuery.of(context).size.height;
+        final screenWidth = MediaQuery.of(context).size.width;
+
+        // Calculate responsive dimensions
+        final double navBarHeight = _calculateNavBarHeight(
+          screenHeight,
+          screenWidth,
+        );
+        final double iconSize = _calculateIconSize(screenHeight, screenWidth);
 
         return Container(
-          height: 60, // Reduced from default height
+          height: navBarHeight,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -245,7 +257,7 @@ class _MainNavigationState extends State<MainNavigation> {
             ],
           ),
           child: NavigationBar(
-            height: 60, // Reduced from default height
+            height: navBarHeight,
             labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
             selectedIndex: _selectedIndex,
             onDestinationSelected: _onItemTapped,
@@ -255,13 +267,13 @@ class _MainNavigationState extends State<MainNavigation> {
                   isDarkMode
                       ? 'assets/icons/not_selected_convert.png'
                       : 'assets/icons/selected_convert.png',
-                  width: 24,
-                  height: 24,
+                  width: iconSize,
+                  height: iconSize,
                 ),
                 selectedIcon: Image.asset(
                   'assets/icons/selected_convert.png',
-                  width: 24,
-                  height: 24,
+                  width: iconSize,
+                  height: iconSize,
                 ),
                 label: L.tr('navigation.convert'),
               ),
@@ -270,13 +282,13 @@ class _MainNavigationState extends State<MainNavigation> {
                   isDarkMode
                       ? 'assets/icons/not_selected_chart.png'
                       : 'assets/icons/selected_chart.png',
-                  width: 24,
-                  height: 24,
+                  width: iconSize,
+                  height: iconSize,
                 ),
                 selectedIcon: Image.asset(
                   'assets/icons/selected_chart.png',
-                  width: 24,
-                  height: 24,
+                  width: iconSize,
+                  height: iconSize,
                 ),
                 label: L.tr('navigation.charts'),
               ),
@@ -285,18 +297,18 @@ class _MainNavigationState extends State<MainNavigation> {
                   isDarkMode
                       ? 'assets/icons/not_selected_currency.png'
                       : 'assets/icons/selected_currency.png',
-                  width: 24,
-                  height: 24,
+                  width: iconSize,
+                  height: iconSize,
                 ),
                 selectedIcon: Image.asset(
                   'assets/icons/selected_currency.png',
-                  width: 24,
-                  height: 24,
+                  width: iconSize,
+                  height: iconSize,
                 ),
                 label: L.tr('navigation.currencies'),
               ),
               NavigationDestination(
-                icon: const Icon(Icons.settings),
+                icon: Icon(Icons.settings, size: iconSize),
                 label: L.tr('navigation.settings'),
               ),
             ],
@@ -304,5 +316,74 @@ class _MainNavigationState extends State<MainNavigation> {
         );
       },
     );
+  }
+
+  // Calculate responsive navigation bar height
+  double _calculateNavBarHeight(double screenHeight, double screenWidth) {
+    // Base height for small screens
+    double baseHeight = 60.0;
+
+    // Scale based on screen height, with reasonable limits
+    if (screenHeight > 800) {
+      baseHeight = 70.0;
+    }
+    if (screenHeight > 900) {
+      baseHeight = 80.0;
+    }
+
+    // Additional scaling for very wide screens (like foldable phones in landscape)
+    if (screenWidth > 600) {
+      baseHeight += 5.0;
+    }
+
+    // Ensure minimum and maximum heights
+    return baseHeight.clamp(60.0, 90.0);
+  }
+
+  // Calculate responsive icon size
+  double _calculateIconSize(double screenHeight, double screenWidth) {
+    // Base icon size for small screens
+    double baseSize = 24.0;
+
+    // Scale based on screen dimensions
+    if (screenHeight > 800) {
+      baseSize = 26.0;
+    }
+    if (screenHeight > 900) {
+      baseSize = 28.0;
+    }
+
+    // Additional scaling for wide screens
+    if (screenWidth > 600) {
+      baseSize += 2.0;
+    }
+
+    // Ensure reasonable limits
+    return baseSize.clamp(24.0, 32.0);
+  }
+
+  // Calculate responsive icon size for navigation rail
+  double _calculateRailIconSize(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    // Base icon size for rail (slightly larger than bottom nav)
+    double baseSize = 26.0;
+
+    // Scale based on screen dimensions
+    if (screenHeight > 800) {
+      baseSize = 28.0;
+    }
+    if (screenHeight > 900) {
+      baseSize = 30.0;
+    }
+
+    // Additional scaling for very wide screens
+    if (screenWidth > 1000) {
+      baseSize += 2.0;
+    }
+
+    // Ensure reasonable limits
+    return baseSize.clamp(26.0, 34.0);
   }
 }
