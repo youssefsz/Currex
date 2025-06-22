@@ -136,7 +136,7 @@ class _MainNavigationState extends State<MainNavigation> {
     );
   }
 
-  // Build layout for mobile screens
+  // Build layout for mobile screen
   Widget _buildMobileLayout() {
     return Scaffold(
       body: IndexedStack(index: _selectedIndex, children: _screens),
