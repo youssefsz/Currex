@@ -13,9 +13,10 @@ class SettingsSurface extends StatelessWidget {
   const SettingsSurface({super.key});
 
   // URLs for external links
-  final String _aboutUrl = 'https://example.com/about';
-  final String _privacyPolicyUrl = 'https://example.com/privacy';
-  final String _termsOfServiceUrl = 'https://example.com/terms';
+  final String _aboutUrl = 'https://youssef.tn/Currex/';
+  final String _privacyPolicyUrl = 'https://youssef.tn/Currex/privacy-policy';
+  final String _termsOfServiceUrl =
+      'https://youssef.tn/Currex/terms-of-service';
 
   @override
   Widget build(BuildContext context) {
