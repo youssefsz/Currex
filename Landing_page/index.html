@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurrEx - Smart Currency Converter</title>
+    <meta name="description" content="CurrEx - The ultimate currency converter app with real-time exchange rates, interactive charts, and seamless conversion between fiat and crypto currencies.">
+    <meta name="keywords" content="currency converter, exchange rates, crypto, forex, mobile app">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youssef.tn/Currex/">
+    <meta property="og:title" content="CurrEx - Smart Currency Converter">
+    <meta property="og:description" content="The ultimate currency converter app with real-time exchange rates and interactive charts.">
+    <meta property="og:image" content="https://youssef.tn/Currex/icon/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://youssef.tn/Currex/">
+    <meta property="twitter:title" content="CurrEx - Smart Currency Converter">
+    <meta property="twitter:description" content="The ultimate currency converter app with real-time exchange rates and interactive charts.">
+    <meta property="twitter:image" content="https://youssef.tn/Currex/icon/logo.png">
+
+    <link rel="icon" type="image/png" href="./icon/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./" class="nav-logo">
+                <img src="./icon/logo.png" alt="CurrEx Logo" class="logo">
+                <span class="logo-text">CurrEx</span>
+            </a>
+            <div class="nav-right">
+                <div class="nav-links" id="navLinks">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#screenshots" class="nav-link">Screenshots</a>
+                    <a href="#download" class="nav-link">Download</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="theme-icon sun-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"/>
+                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">NEW</span>
+                    <span>Real-time exchange rates</span>
+                </div>
+                <h1 class="hero-title">
+                    Convert currencies with
+                    <span class="gradient-text">confidence</span>
+                </h1>
+                <p class="hero-description">
+                    CurrEx delivers instant, accurate currency conversions with live exchange rates, 
+                    interactive charts, and support for both fiat and crypto currencies. 
+                    Your global finance companion.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToDownload()">
+                        <span>Download Now</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToFeatures()">
+                        <span>Learn More</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">170+</span>
+                        <span class="stat-label">Currencies</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Real-time</span>
+                        <span class="stat-label">Exchange Rates</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Charts</span>
+                        <span class="stat-label">& Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <img id="heroScreenshot" src="./imgs/dark/screenshot-dark-convert.jpg" alt="CurrEx App Screenshot" class="hero-screenshot">
+                    <div class="phone-frame"></div>
+                </div>
+                <div class="floating-cards">
+                    <div class="floating-card card-1">
+                        <div class="card-icon">💱</div>
+                        <div class="card-text">
+                            <span class="card-title">USD → EUR</span>
+                            <span class="card-value">0.92</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-icon">📈</div>
+                        <div class="card-text">
+                            <span class="card-title">Live Charts</span>
+                            <span class="card-value">+2.4%</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-text">
+                            <span class="card-title">Instant</span>
+                            <span class="card-value">Conversion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="features-badge">
+                    <span class="badge-dot"></span>
+                    <span>Latest Features</span>
+                </div>
+                <h2 class="features-title">
+                    Everything you need for 
+                    <span class="gradient-text">smart conversions</span>
+                </h2>
+                <p class="features-subtitle">
+                    Powerful tools and intelligent features designed to make currency exchange effortless and precise.
+                </p>
+            </div>
+
+            <!-- Bento Grid Layout -->
+            <div class="features-bento">
+                <!-- Primary Feature - Large Card -->
+                <div class="bento-card bento-large" data-feature="primary">
+                    <div class="bento-content">
+                        <div class="bento-icon primary">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="bento-text">
+                            <h3>Real-time Exchange Rates</h3>
+                            <p>Get instant, accurate currency conversions with live exchange rates updated every minute from trusted financial sources.</p>
+                            <div class="feature-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">170+</span>
+                                    <span class="stat-label">Currencies</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">99.9%</span>
+                                    <span class="stat-label">Accuracy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-visual">
+                        <div class="rate-display">
+                            <div class="rate-card">
+                                <span class="currency">USD → EUR</span>
+                                <span class="rate">0.92</span>
+                                <span class="change positive">+0.02%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Charts -->
+                <div class="bento-card bento-medium" data-feature="charts">
+                    <div class="bento-content">
+                        <div class="bento-icon charts">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v18h18"/>
+                                <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                            </svg>
+                        </div>
+                        <h3>Interactive Charts</h3>
+                        <p>Visualize currency trends with detailed charts and analytics</p>
+                    </div>
+                    <div class="chart-preview">
+                        <svg class="mini-chart" viewBox="0 0 120 60">
+                            <path d="M10 50 Q30 20 50 30 T90 10" stroke="url(#chartGradient)" stroke-width="2" fill="none"/>
+                            <defs>
+                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#3E7BFA"/>
+                                    <stop offset="100%" style="stop-color:#19C2A3"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Crypto Support -->
+                <div class="bento-card bento-medium" data-feature="crypto">
+                    <div class="bento-content">
+                        <div class="bento-icon crypto">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            </svg>
+                        </div>
+                        <h3>Crypto & Fiat</h3>
+                        <p>Complete support for traditional and digital currencies</p>
+                        <div class="crypto-icons">
+                            <span class="crypto-symbol">₿</span>
+                            <span class="crypto-symbol">Ξ</span>
+                            <span class="crypto-symbol">$</span>
+                            <span class="crypto-symbol">€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorites Management -->
+                <div class="bento-card bento-small" data-feature="favorites">
+                    <div class="bento-content">
+                        <div class="bento-icon favorites">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z"/>
+                            </svg>
+                        </div>
+                        <h3>Smart Favorites</h3>
+                        <p>Quick access to your most-used currencies</p>
+                    </div>
+                </div>
+
+                <!-- Theme Support -->
+                <div class="bento-card bento-small" data-feature="themes">
+                    <div class="bento-content">
+                        <div class="bento-icon themes">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
+                            </svg>
+                        </div>
+                        <h3>Dark & Light</h3>
+                        <p>Elegant themes for any preference</p>
+                        <div class="theme-toggle-preview">
+                            <div class="theme-dot light"></div>
+                            <div class="theme-dot dark"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Features -->
+                <div class="bento-card bento-wide" data-feature="advanced">
+                    <div class="bento-content">
+                        <h3>Advanced Features</h3>
+                        <div class="advanced-features">
+                            <div class="advanced-item">
+                                <div class="advanced-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                                        <path d="M3 3v5h5"/>
+                                    </svg>
+                                </div>
+                                <span>Conversion History</span>
+                            </div>
+                            <div class="advanced-item">
+                                <div class="advanced-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    </svg>
+                                </div>
+                                <span>Haptic Feedback</span>
+                            </div>
+                            <div class="advanced-item">
+                                <div class="advanced-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                    </svg>
+                                </div>
+                                <span>Multi-language</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <div class="screenshots-badge">
+                    <span class="badge-dot"></span>
+                    <span>App Preview</span>
+                </div>
+                <h2 class="section-title">Experience CurrEx in <span class="gradient-text">stunning detail</span></h2>
+                <p class="section-description">
+                    Discover the beautiful interface and powerful features that make currency conversion effortless and intuitive.
+                </p>
+            </div>
+            
+            <div class="screenshots-showcase">
+                <!-- 3D Device Display -->
+                <div class="device-showcase">
+                    <div class="device-stage">
+                        <!-- Primary Device -->
+                        <div class="device-mockup primary-device">
+                            <div class="device-frame">
+                                <div class="device-screen">
+                                    <img id="primaryScreenshot" src="./imgs/dark/screenshot-dark-convert.jpg" alt="CurrEx App Screenshot" class="device-screenshot">
+                                </div>
+                                <div class="device-reflection"></div>
+                            </div>
+                            <!-- Interactive Hotspots -->
+                            <div class="feature-hotspots">
+                                <div class="hotspot hotspot-1" data-feature="rates">
+                                    <div class="hotspot-pulse"></div>
+                                    <div class="hotspot-tooltip">
+                                        <span>Real-time Rates</span>
+                                    </div>
+                                </div>
+                                <div class="hotspot hotspot-2" data-feature="swap">
+                                    <div class="hotspot-pulse"></div>
+                                    <div class="hotspot-tooltip">
+                                        <span>Instant Swap</span>
+                                    </div>
+                                </div>
+                                <div class="hotspot hotspot-3" data-feature="favorites">
+                                    <div class="hotspot-pulse"></div>
+                                    <div class="hotspot-tooltip">
+                                        <span>Quick Favorites</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Secondary Devices -->
+                        <div class="device-mockup secondary-device left-device">
+                            <div class="device-frame mini">
+                                <div class="device-screen">
+                                    <img id="leftScreenshot" src="./imgs/dark/screenshot-dark-charts.jpg" alt="Charts Screen" class="device-screenshot">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="device-mockup secondary-device right-device">
+                            <div class="device-frame mini">
+                                <div class="device-screen">
+                                    <img id="rightScreenshot" src="./imgs/dark/screenshot-dark-currencies.jpg" alt="Currency List Screen" class="device-screenshot">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="floating-ui-elements">
+                            <div class="floating-element element-1">
+                                <div class="element-icon">📊</div>
+                                <div class="element-text">
+                                    <span class="element-title">Live Charts</span>
+                                    <span class="element-value">Real-time</span>
+                                </div>
+                            </div>
+                            <div class="floating-element element-2">
+                                <div class="element-icon">⚡</div>
+                                <div class="element-text">
+                                    <span class="element-title">Instant</span>
+                                    <span class="element-value">< 100ms</span>
+                                </div>
+                            </div>
+                            <div class="floating-element element-3">
+                                <div class="element-icon">🔐</div>
+                                <div class="element-text">
+                                    <span class="element-title">Secure</span>
+                                    <span class="element-value">Encrypted</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Details Panel -->
+                <div class="feature-details">
+                    <div class="feature-content active" data-feature="convert">
+                        <div class="feature-badge">
+                            <span class="feature-icon">💱</span>
+                            <span>Currency Converter</span>
+                        </div>
+                        <h3>Smart Currency Conversion</h3>
+                        <p>Convert any amount between 170+ currencies with lightning-fast real-time exchange rates. Our intelligent system provides instant conversions with bank-level accuracy.</p>
+                        <div class="feature-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                    </svg>
+                                </div>
+                                <span>Lightning fast conversions</span>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                                        <path d="M3 3v5h5"/>
+                                    </svg>
+                                </div>
+                                <span>Instant currency swapping</span>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z"/>
+                                    </svg>
+                                </div>
+                                <span>Smart favorites system</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-content" data-feature="charts">
+                        <div class="feature-badge">
+                            <span class="feature-icon">📈</span>
+                            <span>Interactive Charts</span>
+                        </div>
+                        <h3>Advanced Market Analytics</h3>
+                        <p>Visualize currency trends with stunning interactive charts. Track historical data, identify patterns, and make informed decisions with professional-grade analytics.</p>
+                        <div class="feature-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 3v18h18"/>
+                                        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                                    </svg>
+                                </div>
+                                <span>Multiple time periods</span>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="1"/>
+                                        <path d="M19 12c0 1.5-2 3-7 3s-7-1.5-7-3 2-1.5 7-1.5 7-1.5 7 1.5"/>
+                                        <path d="M12 2v2"/>
+                                        <path d="M12 20v2"/>
+                                        <path d="M4.93 4.93l1.41 1.41"/>
+                                        <path d="M17.66 17.66l1.41 1.41"/>
+                                        <path d="M2 12h2"/>
+                                        <path d="M20 12h2"/>
+                                        <path d="M6.34 17.66l-1.41 1.41"/>
+                                        <path d="M19.07 4.93l-1.41 1.41"/>
+                                    </svg>
+                                </div>
+                                <span>Interactive data points</span>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="7,10 12,15 17,10"/>
+                                        <line x1="12" y1="15" x2="12" y2="3"/>
+                                    </svg>
+                                </div>
+                                <span>Export capabilities</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-content" data-feature="currencies">
+                        <div class="feature-badge">
+                            <span class="feature-icon">🌍</span>
+                            <span>Currency Explorer</span>
+                        </div>
+                        <h3>Comprehensive Currency Support</h3>
+                        <p>Access 170+ global currencies including major fiat and popular cryptocurrencies. Search, filter, and organize your preferred currencies with intelligent categorization.</p>
+                        <div class="feature-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"/>
+                                        <path d="m21 21-4.35-4.35"/>
+                                    </svg>
+                                </div>
+                                <span>Advanced search & filtering</span>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                                    </svg>
+                                </div>
+                                <span>Crypto & fiat support</span>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z"/>
+                                    </svg>
+                                </div>
+                                <span>Smart favorites management</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-content" data-feature="settings">
+                        <div class="feature-badge">
+                            <span class="feature-icon">⚙️</span>
+                            <span>Personalization</span>
+                        </div>
+                        <h3>Tailored Experience</h3>
+                        <p>Customize CurrEx to match your preferences with beautiful themes, language options, and accessibility features. Make the app truly yours.</p>
+                        <div class="feature-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
+                                    </svg>
+                                </div>
+                                <span>Beautiful dark & light themes</span>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                    </svg>
+                                </div>
+                                <span>Multi-language support</span>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                    </svg>
+                                </div>
+                                <span>Haptic feedback controls</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Controls -->
+            <div class="screenshots-navigation">
+                <button class="feature-nav-btn active" data-screen="convert">
+                    <span class="nav-icon">💱</span>
+                    <span class="nav-label">Convert</span>
+                </button>
+                <button class="feature-nav-btn" data-screen="charts">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-label">Charts</span>
+                </button>
+                <button class="feature-nav-btn" data-screen="currencies">
+                    <span class="nav-icon">🌍</span>
+                    <span class="nav-label">Currencies</span>
+                </button>
+                <button class="feature-nav-btn" data-screen="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-label">Settings</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <div class="testimonials-badge">
+                    <span class="badge-dot"></span>
+                    <span>Customer Stories</span>
+                </div>
+                <h2 class="section-title">
+                    Trusted by <span class="gradient-text">10,000+</span> users worldwide
+                </h2>
+                <p class="section-description">
+                    Discover what our community says about CurrEx. Real stories from real users who've transformed their currency conversion experience.
+                </p>
+                <div class="testimonials-stats">
+                    <div class="stat-badge">
+                        <span class="stat-number">4.9</span>
+                        <div class="stat-stars">★★★★★</div>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Happy Users</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infinite Testimonials Carousel -->
+            <div class="testimonials-carousel-container">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Row 1 - Moving Right -->
+                    <div class="testimonials-row row-right">
+                        <div class="testimonial-card glass">
+                            <div class="testimonial-header">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Alex Johnson" class="avatar-img">
+                                    <div class="verified-badge">✓</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Alex Johnson</h4>
+                                    <p class="author-title">Digital Nomad</p>
+                                    <div class="location">🇺🇸 San Francisco, USA</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"CurrEx has completely revolutionized how I handle international transactions. The real-time rates are incredibly accurate, and the interface is so intuitive. As someone who travels constantly for work, this app has become absolutely essential."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <span class="usage-badge">💰 Saved $2,400 this year</span>
+                                <span class="date">2 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass">
+                            <div class="testimonial-header">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b1e0?w=100&h=100&fit=crop&crop=face" alt="Sarah Chen" class="avatar-img">
+                                    <div class="verified-badge">✓</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Sarah Chen</h4>
+                                    <p class="author-title">International Business Owner</p>
+                                    <div class="location">🇸🇬 Singapore</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"The chart feature is phenomenal for tracking currency trends. It's helped me make better decisions for my international business. The crypto support is also a game-changer - everything I need in one beautiful app."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <span class="usage-badge">📈 Tracks 12 currencies</span>
+                                <span class="date">5 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass">
+                            <div class="testimonial-header">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Michael Rodriguez" class="avatar-img">
+                                    <div class="verified-badge">✓</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Michael Rodriguez</h4>
+                                    <p class="author-title">Finance Manager</p>
+                                    <div class="location">🇪🇸 Barcelona, Spain</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"I've tried dozens of currency apps, but CurrEx stands out with its precision and speed. The dark mode is gorgeous, and the haptic feedback makes every interaction feel premium. Highly recommended!"</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <span class="usage-badge">⚡ 500+ conversions</span>
+                                <span class="date">1 week ago</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass">
+                            <div class="testimonial-header">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" alt="Emma Thompson" class="avatar-img">
+                                    <div class="verified-badge">✓</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Emma Thompson</h4>
+                                    <p class="author-title">Crypto Trader</p>
+                                    <div class="location">🇬🇧 London, UK</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"Finally, an app that handles both fiat and crypto seamlessly! The real-time rates are spot-on, and I love how I can track all my currencies in one place. The design is absolutely stunning too."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <span class="usage-badge">₿ Crypto + Fiat trader</span>
+                                <span class="date">3 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 - Moving Left -->
+                    <div class="testimonials-row row-left">
+                        <div class="testimonial-card glass">
+                            <div class="testimonial-header">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100&h=100&fit=crop&crop=face" alt="David Kim" class="avatar-img">
+                                    <div class="verified-badge">✓</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">David Kim</h4>
+                                    <p class="author-title">Travel Blogger</p>
+                                    <div class="location">🇰🇷 Seoul, South Korea</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"As someone who travels to 30+ countries annually, CurrEx is my lifesaver. The offline mode works perfectly, and the favorites feature lets me quickly access the currencies I need most."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <span class="usage-badge">✈️ 30+ countries</span>
+                                <span class="date">4 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass">
+                            <div class="testimonial-header">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face" alt="Maria Santos" class="avatar-img">
+                                    <div class="verified-badge">✓</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Maria Santos</h4>
+                                    <p class="author-title">E-commerce Manager</p>
+                                    <div class="location">🇧🇷 São Paulo, Brazil</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"The accuracy and speed of CurrEx is unmatched. For our international e-commerce business, having reliable currency data is crucial. This app delivers every single time."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <span class="usage-badge">🛒 $50K+ transactions</span>
+                                <span class="date">6 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass">
+                            <div class="testimonial-header">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop&crop=face" alt="James Wilson" class="avatar-img">
+                                    <div class="verified-badge">✓</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">James Wilson</h4>
+                                    <p class="author-title">Freelance Developer</p>
+                                    <div class="location">🇨🇦 Toronto, Canada</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"The user interface design is absolutely incredible. As a developer myself, I appreciate the attention to detail and smooth animations. Plus, the conversion history is super helpful."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <span class="usage-badge">💻 Developer approved</span>
+                                <span class="date">1 week ago</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card glass">
+                            <div class="testimonial-header">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Lisa Chang" class="avatar-img">
+                                    <div class="verified-badge">✓</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Lisa Chang</h4>
+                                    <p class="author-title">Investment Advisor</p>
+                                    <div class="location">🇭🇰 Hong Kong</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-score">5.0</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"The analytics and charts feature gives me professional-grade insights for my investment decisions. CurrEx has become an indispensable tool in my daily workflow."</p>
+                            </div>
+                            <div class="testimonial-footer">
+                                <span class="usage-badge">📊 Professional trader</span>
+                                <span class="date">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Testimonials Controls -->
+            <div class="testimonials-controls">
+                <button class="control-btn pause-btn" id="pauseTestimonials" aria-label="Pause testimonials">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="6" y="4" width="4" height="16"/>
+                        <rect x="14" y="4" width="4" height="16"/>
+                    </svg>
+                </button>
+                <button class="control-btn play-btn hidden" id="playTestimonials" aria-label="Play testimonials">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5,3 19,12 5,21"/>
+                    </svg>
+                </button>
+                <span class="control-text">Testimonials auto-scroll</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="download" class="cta">
+        <div class="cta-background">
+            <div class="cta-gradient-orb cta-orb-1"></div>
+            <div class="cta-gradient-orb cta-orb-2"></div>
+            <div class="cta-grid-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-badge">
+                    <span class="cta-badge-dot"></span>
+                    <span>Available Now</span>
+                </div>
+                
+                <h2 class="cta-title">
+                    Ready to convert with 
+                    <span class="cta-title-highlight">confidence?</span>
+                </h2>
+                
+                <p class="cta-description">
+                    Join <strong>10,000+ users</strong> who've already transformed their currency conversion experience. 
+                    Download CurrEx today and unlock the future of financial precision.
+                </p>
+                
+                <div class="cta-stats">
+                    <div class="cta-stat">
+                        <span class="cta-stat-number">4.9</span>
+                        <div class="cta-stat-stars">★★★★★</div>
+                        <span class="cta-stat-label">App Store Rating</span>
+                    </div>
+                    <div class="cta-stat">
+                        <span class="cta-stat-number">10K+</span>
+                        <span class="cta-stat-label">Active Users</span>
+                    </div>
+                    <div class="cta-stat">
+                        <span class="cta-stat-number">150+</span>
+                        <span class="cta-stat-label">Countries</span>
+                    </div>
+                </div>
+                
+                <div class="download-buttons">
+                    <a href="#" class="download-btn download-btn-ios">
+                        <div class="download-btn-content">
+                            <svg class="download-btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            <div class="download-btn-text">
+                                <span class="download-btn-small">Download on the</span>
+                                <span class="download-btn-large">App Store</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="download-btn download-btn-android">
+                        <div class="download-btn-content">
+                            <svg class="download-btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                            </svg>
+                            <div class="download-btn-text">
+                                <span class="download-btn-small">GET IT ON</span>
+                                <span class="download-btn-large">Google Play</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <div class="cta-feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <circle cx="12" cy="12" r="9"/>
+                            </svg>
+                        </div>
+                        <span>Free to download</span>
+                    </div>
+                    <div class="cta-feature">
+                        <div class="cta-feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <circle cx="12" cy="16" r="1"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <span>100% secure & private</span>
+                    </div>
+                    <div class="cta-feature">
+                        <div class="cta-feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17,8 12,3 7,8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <span>Instant setup</span>
+                    </div>
+                    
+                </div>
+                
+                <div class="cta-trust-indicators">
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                        <span>Bank-level security</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <span>Trusted by 10K+ users</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                        <span>No subscription required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="./" class="footer-logo">
+                    <img src="./icon/logo.png" alt="CurrEx Logo" class="logo">
+                    <span class="logo-text">CurrEx</span>
+                </a>
+                <div class="footer-links">
+                    <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+                    
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CurrEx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html> 

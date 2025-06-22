@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - CurrEx</title>
+    <meta name="description" content="CurrEx Privacy Policy - Learn how we collect, use, and protect your personal data in our currency converter app.">
+    <meta name="keywords" content="privacy policy, data protection, CurrEx, personal information, GDPR, CCPA">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youssef.tn/Currex/privacy-policy.html">
+    <meta property="og:title" content="Privacy Policy - CurrEx">
+    <meta property="og:description" content="Learn how CurrEx protects your privacy and personal data.">
+    <meta property="og:image" content="https://youssef.tn/Currex/icon/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://youssef.tn/Currex/privacy-policy.html">
+    <meta property="twitter:title" content="Privacy Policy - CurrEx">
+    <meta property="twitter:description" content="Learn how CurrEx protects your privacy and personal data.">
+    <meta property="twitter:image" content="https://youssef.tn/Currex/icon/logo.png">
+
+    <link rel="icon" type="image/png" href="./icon/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Additional styles for legal pages */
+        .legal-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: var(--bg-primary);
+        }
+        
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+        
+        .legal-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 0;
+        }
+        
+        .legal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+        
+        .legal-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        
+        .legal-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .last-updated {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .update-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .update-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .update-date {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .table-of-contents {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .toc-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .toc-item {
+            margin-bottom: 12px;
+        }
+        
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .toc-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .toc-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+            flex-shrink: 0;
+        }
+        
+        .legal-content {
+            line-height: 1.8;
+        }
+        
+        .section {
+            margin-bottom: 48px;
+            scroll-margin-top: 100px;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .section-content p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        
+        .section-content ul, .section-content ol {
+            margin: 16px 0 16px 20px;
+            color: var(--text-secondary);
+        }
+        
+        .section-content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(62, 123, 250, 0.1) 0%, rgba(25, 194, 163, 0.1) 100%);
+            border: 1px solid rgba(62, 123, 250, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .highlight-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .highlight-icon {
+            width: 16px;
+            height: 16px;
+            color: var(--primary-color);
+        }
+        
+        .contact-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        
+        .contact-description {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+        
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(62, 123, 250, 0.4);
+        }
+        
+        .email-icon {
+            width: 18px;
+            height: 18px;
+        }
+        
+        /* Dark mode adjustments */
+        .dark-mode .highlight-box {
+            background: linear-gradient(135deg, rgba(62, 123, 250, 0.15) 0%, rgba(25, 194, 163, 0.15) 100%);
+            border-color: rgba(62, 123, 250, 0.3);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .legal-title {
+                font-size: 2.5rem;
+            }
+            
+            .legal-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .table-of-contents {
+                padding: 24px 20px;
+            }
+            
+            .section-number {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .legal-container {
+                padding: 0 16px 60px;
+            }
+            
+            .legal-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.25rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .table-of-contents {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./" class="nav-logo">
+                <img src="./icon/logo.png" alt="CurrEx Logo" class="logo">
+                <span class="logo-text">CurrEx</span>
+            </a>
+            <div class="nav-right">
+                <div class="nav-links" id="navLinks">
+                    <a href="./" class="nav-link">Home</a>
+                    <a href="./#features" class="nav-link">Features</a>
+                    <a href="./#screenshots" class="nav-link">Screenshots</a>
+                    <a href="./#download" class="nav-link">Download</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="theme-icon sun-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"/>
+                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Legal Page Content -->
+    <main class="legal-page">
+        <div class="legal-container">
+            <!-- Header -->
+            <header class="legal-header">
+                <div class="legal-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <circle cx="12" cy="16" r="1"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    <span>Privacy & Data Protection</span>
+                </div>
+                <h1 class="legal-title">Privacy Policy</h1>
+                <p class="legal-subtitle">
+                    We're committed to protecting your privacy and being transparent about how we collect, 
+                    use, and share your personal information when you use CurrEx.
+                </p>
+            </header>
+
+            <!-- Last Updated -->
+            <div class="last-updated">
+                <svg class="update-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                </svg>
+                <div class="update-text">
+                    Last updated: <span class="update-date">January 15, 2025</span>
+                </div>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="table-of-contents">
+                <h2 class="toc-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18M3 12h18M3 18h18"/>
+                    </svg>
+                    Table of Contents
+                </h2>
+                <ul class="toc-list">
+                    <li class="toc-item">
+                        <a href="#information-collection" class="toc-link">
+                            <span class="toc-number">1</span>
+                            Information We Collect
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#information-use" class="toc-link">
+                            <span class="toc-number">2</span>
+                            How We Use Your Information
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#information-sharing" class="toc-link">
+                            <span class="toc-number">3</span>
+                            Information Sharing
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#data-security" class="toc-link">
+                            <span class="toc-number">4</span>
+                            Data Security
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#data-retention" class="toc-link">
+                            <span class="toc-number">5</span>
+                            Data Retention
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#your-rights" class="toc-link">
+                            <span class="toc-number">6</span>
+                            Your Rights
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#cookies" class="toc-link">
+                            <span class="toc-number">7</span>
+                            Cookies & Tracking
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#international-transfers" class="toc-link">
+                            <span class="toc-number">8</span>
+                            International Transfers
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#children-privacy" class="toc-link">
+                            <span class="toc-number">9</span>
+                            Children's Privacy
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#changes" class="toc-link">
+                            <span class="toc-number">10</span>
+                            Changes to This Policy
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Legal Content -->
+            <div class="legal-content">
+                <!-- Section 1 -->
+                <section id="information-collection" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">1</span>
+                        Information We Collect
+                    </h2>
+                    <div class="section-content">
+                        <p>We collect information that you provide directly to us, information we obtain automatically when you use our services, and information from third-party sources.</p>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                </svg>
+                                Personal Information You Provide
+                            </div>
+                            <ul>
+                                <li><strong>Account Information:</strong> Email address, username, and password when you create an account</li>
+                                <li><strong>Profile Information:</strong> Preferred currencies, favorite currency pairs, and app settings</li>
+                                <li><strong>Communication Data:</strong> Messages you send to us, feedback, and support requests</li>
+                                <li><strong>Payment Information:</strong> If you purchase premium features, payment details processed securely by our payment processors</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>Information We Collect Automatically</h3>
+                        <ul>
+                            <li><strong>Usage Data:</strong> Currency conversion history, app interactions, and feature usage patterns</li>
+                            <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers, and mobile network information</li>
+                            <li><strong>Location Data:</strong> Approximate location based on IP address to provide relevant currency information</li>
+                            <li><strong>Technical Data:</strong> App crashes, performance metrics, and debugging information</li>
+                        </ul>
+                        
+                        <h3>Information from Third Parties</h3>
+                        <p>We receive exchange rate data from financial data providers and may collect information from analytics services to improve our app performance.</p>
+                    </div>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="information-use" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">2</span>
+                        How We Use Your Information
+                    </h2>
+                    <div class="section-content">
+                        <p>We use your personal information for the following specific purposes:</p>
+                        
+                        <h3>Core Service Functionality</h3>
+                        <ul>
+                            <li>Provide real-time currency conversion and exchange rate information</li>
+                            <li>Display interactive charts and historical currency data</li>
+                            <li>Maintain your favorite currencies and conversion history</li>
+                            <li>Sync your preferences across devices</li>
+                        </ul>
+                        
+                        <h3>Service Improvement & Personalization</h3>
+                        <ul>
+                            <li>Analyze usage patterns to improve app performance and user experience</li>
+                            <li>Personalize currency recommendations based on your usage</li>
+                            <li>Develop new features and functionalities</li>
+                            <li>Optimize app performance and fix technical issues</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3"/>
+                                </svg>
+                                No AI Training Without Consent
+                            </div>
+                            <p>We do not use your personal data to train AI models or machine learning algorithms without your explicit consent. Your currency conversion history and usage patterns remain private and are not used for automated decision-making that affects you.</p>
+                        </div>
+                        
+                        <h3>Communication & Support</h3>
+                        <ul>
+                            <li>Respond to your inquiries and provide customer support</li>
+                            <li>Send important updates about our services</li>
+                            <li>Notify you about new features (only with your consent)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="information-sharing" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">3</span>
+                        Information Sharing
+                    </h2>
+                    <div class="section-content">
+                        <p>We do not sell your personal information. We may share your information only in the following limited circumstances:</p>
+                        
+                        <h3>Service Providers & Partners</h3>
+                        <ul>
+                            <li><strong>Financial Data Providers:</strong> We share minimal technical data with currency exchange rate providers (no personal information)</li>
+                            <li><strong>Cloud Infrastructure:</strong> AWS and Google Cloud for secure data storage and app performance</li>
+                            <li><strong>Analytics Services:</strong> Anonymized usage data with analytics providers to improve our services</li>
+                            <li><strong>Payment Processors:</strong> Stripe and Apple/Google for processing premium subscriptions</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                </svg>
+                                Third-Party Safeguards
+                            </div>
+                            <p>All third-party service providers are contractually required to protect your data and use it only for the specific services they provide to us. They operate under strict data processing agreements and are located in jurisdictions with adequate data protection laws.</p>
+                        </div>
+                        
+                        <h3>Legal Requirements</h3>
+                        <p>We may disclose your information if required by law, regulation, legal process, or government request, or to protect the rights, property, or safety of CurrEx, our users, or others.</p>
+                        
+                        <h3>Business Transfers</h3>
+                        <p>If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction, subject to the same privacy protections.</p>
+                    </div>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="data-security" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">4</span>
+                        Data Security
+                    </h2>
+                    <div class="section-content">
+                        <p>We implement comprehensive security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                        
+                        <h3>Technical Safeguards</h3>
+                        <ul>
+                            <li><strong>Encryption:</strong> All data is encrypted in transit using TLS 1.3 and at rest using AES-256 encryption</li>
+                            <li><strong>Access Controls:</strong> Role-based access controls ensure only authorized personnel can access your data</li>
+                            <li><strong>Secure Infrastructure:</strong> We use enterprise-grade cloud infrastructure with 24/7 monitoring</li>
+                            <li><strong>Regular Audits:</strong> We conduct quarterly security assessments and vulnerability testing</li>
+                        </ul>
+                        
+                        <h3>Organizational Safeguards</h3>
+                        <ul>
+                            <li>Employee background checks and security training</li>
+                            <li>Strict data access policies and monitoring</li>
+                            <li>Incident response procedures for potential security breaches</li>
+                            <li>Regular security awareness training for all team members</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                Breach Notification
+                            </div>
+                            <p>In the unlikely event of a data breach affecting your personal information, we will notify you within 72 hours via email and provide clear information about what happened, what information was involved, and what steps we're taking to resolve the issue.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="data-retention" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">5</span>
+                        Data Retention
+                    </h2>
+                    <div class="section-content">
+                        <p>We retain your personal information only as long as necessary to provide our services and fulfill the purposes outlined in this privacy policy.</p>
+                        
+                        <h3>Retention Periods by Data Type</h3>
+                        <ul>
+                            <li><strong>Account Information:</strong> Retained while your account is active and for 30 days after account deletion</li>
+                            <li><strong>Conversion History:</strong> Stored for 2 years to provide historical tracking and analytics</li>
+                            <li><strong>Usage Analytics:</strong> Aggregated data retained for 3 years; individual usage data for 1 year</li>
+                            <li><strong>Support Communications:</strong> Kept for 3 years to provide ongoing support and improve services</li>
+                            <li><strong>Financial Records:</strong> Retained for 7 years as required by financial regulations</li>
+                        </ul>
+                        
+                        <h3>Data Deletion</h3>
+                        <p>When data reaches the end of its retention period, it is securely deleted or anonymized. You can request early deletion of your personal data at any time by contacting us.</p>
+                    </div>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="your-rights" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">6</span>
+                        Your Rights
+                    </h2>
+                    <div class="section-content">
+                        <p>You have several rights regarding your personal information, regardless of where you're located. We respect these rights and provide easy ways to exercise them.</p>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M20 8v6M23 11h-6"/>
+                                </svg>
+                                Your Privacy Rights
+                            </div>
+                            <ul>
+                                <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+                                <li><strong>Correction:</strong> Ask us to correct inaccurate or incomplete information</li>
+                                <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                                <li><strong>Portability:</strong> Receive your data in a structured, machine-readable format</li>
+                                <li><strong>Objection:</strong> Object to our processing of your personal information</li>
+                                <li><strong>Restriction:</strong> Request that we limit how we use your information</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>How to Exercise Your Rights</h3>
+                        <ul>
+                            <li><strong>In-App Settings:</strong> Access, modify, or delete much of your information directly in the app</li>
+                            <li><strong>Email Request:</strong> Contact us at contact@youssef.tn for more complex requests</li>
+                            <li><strong>Response Time:</strong> We respond to all requests within 30 days</li>
+                        </ul>
+                        
+                        <h3>California Residents (CCPA/CPRA)</h3>
+                        <p>California residents have additional rights under the California Consumer Privacy Act, including the right to know what personal information is sold or disclosed and to opt-out of the sale of personal information. We do not sell personal information.</p>
+                        
+                        <h3>European Residents (GDPR)</h3>
+                        <p>If you're in the European Economic Area, you have additional rights under GDPR, including the right to lodge a complaint with your local data protection authority.</p>
+                    </div>
+                </section>
+
+                <!-- Section 7 -->
+                <section id="cookies" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">7</span>
+                        Cookies & Tracking
+                    </h2>
+                    <div class="section-content">
+                        <p>We use cookies and similar technologies to improve your experience and understand how our services are used.</p>
+                        
+                        <h3>Types of Cookies We Use</h3>
+                        <ul>
+                            <li><strong>Essential Cookies:</strong> Required for the app to function properly (cannot be disabled)</li>
+                            <li><strong>Performance Cookies:</strong> Help us understand how users interact with our app</li>
+                            <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+                            <li><strong>Analytics Cookies:</strong> Provide insights into app usage and performance</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <path d="M7 15h10M7 11h6"/>
+                                </svg>
+                                Cookie Control
+                            </div>
+                            <p>You can control cookie preferences through your browser settings or our in-app privacy controls. Note that disabling certain cookies may limit some functionality of our app.</p>
+                        </div>
+                        
+                        <h3>Third-Party Analytics</h3>
+                        <p>We use Google Analytics and other analytics services to understand app usage. These services may use cookies and collect information about your usage patterns. You can opt-out of Google Analytics using the Google Analytics Opt-out Browser Add-on.</p>
+                    </div>
+                </section>
+
+                <!-- Section 8 -->
+                <section id="international-transfers" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">8</span>
+                        International Transfers
+                    </h2>
+                    <div class="section-content">
+                        <p>CurrEx operates globally, and your information may be transferred to and processed in countries other than your own.</p>
+                        
+                        <h3>Cross-Border Data Protection</h3>
+                        <ul>
+                            <li>We transfer data only to countries with adequate data protection laws or under appropriate safeguards</li>
+                            <li>All international transfers comply with GDPR Standard Contractual Clauses</li>
+                            <li>We maintain the same level of data protection regardless of where data is processed</li>
+                        </ul>
+                        
+                        <h3>Data Processing Locations</h3>
+                        <p>Your data may be processed in the United States, European Union, and other countries where our service providers operate. We ensure all locations meet strict data protection standards.</p>
+                    </div>
+                </section>
+
+                <!-- Section 9 -->
+                <section id="children-privacy" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">9</span>
+                        Children's Privacy
+                    </h2>
+                    <div class="section-content">
+                        <p>CurrEx is designed for general audiences and not specifically directed to children under 13. We do not knowingly collect personal information from children under 13.</p>
+                        
+                        <div class="highlight-box">
+                            <div class="highlight-title">
+                                <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                Parental Notice
+                            </div>
+                            <p>If we discover that we have collected personal information from a child under 13, we will promptly delete that information. If you believe your child has provided us with personal information, please contact us immediately.</p>
+                        </div>
+                        
+                        <h3>Teen Users (13-17)</h3>
+                        <p>For users between 13-17, we encourage parental involvement in reviewing this privacy policy and discussing online privacy practices.</p>
+                    </div>
+                </section>
+
+                <!-- Section 10 -->
+                <section id="changes" class="section">
+                    <h2 class="section-title">
+                        <span class="section-number">10</span>
+                        Changes to This Policy
+                    </h2>
+                    <div class="section-content">
+                        <p>We may update this privacy policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.</p>
+                        
+                        <h3>How We Notify You</h3>
+                        <ul>
+                            <li><strong>Significant Changes:</strong> We'll email you and display a prominent notice in the app</li>
+                            <li><strong>Minor Updates:</strong> We'll update the "Last Updated" date and notify you through the app</li>
+                            <li><strong>Advance Notice:</strong> For material changes, we provide at least 30 days' notice</li>
+                        </ul>
+                        
+                        <h3>Your Options</h3>
+                        <p>If you disagree with changes to our privacy policy, you can delete your account before the changes take effect. Continued use of our services after changes become effective means you accept the updated policy.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h2 class="contact-title">Questions About Privacy?</h2>
+                <p class="contact-description">
+                    If you have any questions about this privacy policy or our data practices, 
+                    our privacy team is here to help.
+                </p>
+                <a href="mailto:contact@youssef.tn" class="contact-email">
+                    <svg class="email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    contact@youssef.tn
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="./" class="footer-logo">
+                    <img src="./icon/logo.png" alt="CurrEx Logo" class="logo">
+                    <span class="logo-text">CurrEx</span>
+                </a>
+                <div class="footer-links">
+                    <a href="./" class="footer-link">Home</a>
+                    <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CurrEx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

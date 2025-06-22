@@ -61,19 +61,21 @@ class MyApp extends StatelessWidget {
           // Set context for responsive theme
           themeService.setContext(context);
 
-          // Set system UI overlay style based on theme
+          // Set system UI overlay style based on theme using scheduleMicrotask to avoid crashes
           final isDark = themeProvider.isDarkMode;
-          SystemChrome.setSystemUIOverlayStyle(
-            SystemUiOverlayStyle(
-              statusBarColor: Colors.transparent,
-              statusBarIconBrightness:
-                  isDark ? Brightness.light : Brightness.dark,
-              systemNavigationBarColor:
-                  isDark ? const Color(0xFF121622) : const Color(0xFFF8F9FD),
-              systemNavigationBarIconBrightness:
-                  isDark ? Brightness.light : Brightness.dark,
-            ),
-          );
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            SystemChrome.setSystemUIOverlayStyle(
+              SystemUiOverlayStyle(
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness:
+                    isDark ? Brightness.light : Brightness.dark,
+                systemNavigationBarColor:
+                    isDark ? const Color(0xFF121622) : const Color(0xFFF8F9FD),
+                systemNavigationBarIconBrightness:
+                    isDark ? Brightness.light : Brightness.dark,
+              ),
+            );
+          });
 
           return Consumer2<SettingsProvider, LocalizationProvider>(
             builder: (context, settingsProvider, localizationProvider, _) {
