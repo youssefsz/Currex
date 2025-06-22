@@ -1,0 +1,63 @@
+import 'dart:async';
+import 'dart:ui' as ui;
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+class ScreenCaptureProvider extends StatefulWidget {
+  final Widget child;
+
+  const ScreenCaptureProvider({
+    super.key,
+    required this.child,
+  });
+
+  // Access to the state for capturing screens
+  static ScreenCaptureProviderState? of(BuildContext context) {
+    return context.findAncestorStateOfType<ScreenCaptureProviderState>();
+  }
+
+  @override
+  ScreenCaptureProviderState createState() => ScreenCaptureProviderState();
+}
+
+class ScreenCaptureProviderState extends State<ScreenCaptureProvider> {
+  final GlobalKey _repaintBoundaryKey = GlobalKey();
+  bool _isCapturing = false;
+
+  Future<ui.Image?> captureScreen() async {
+    if (_isCapturing) return null;
+
+    try {
+      setState(() => _isCapturing = true);
+
+      // Wait for the next frame to ensure the boundary is painted
+      await Future.delayed(Duration.zero);
+
+      // Find the boundary
+      final boundary = _repaintBoundaryKey.currentContext?.findRenderObject()
+          as RenderRepaintBoundary?;
+      if (boundary == null) {
+        print('Could not find RepaintBoundary');
+        setState(() => _isCapturing = false);
+        return null;
+      }
+
+      // Capture the image
+      final ui.Image image = await boundary.toImage(pixelRatio: 2.0);
+      setState(() => _isCapturing = false);
+      return image;
+    } catch (e) {
+      print('Error capturing screen: $e');
+      setState(() => _isCapturing = false);
+      return null;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return RepaintBoundary(
+      key: _repaintBoundaryKey,
+      child: widget.child,
+    );
+  }
+}

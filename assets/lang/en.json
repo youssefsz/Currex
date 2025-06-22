@@ -1,0 +1,118 @@
+{
+  "app_name": "CurrEx",
+  "home_screen": {
+    "title": "Currency Converter",
+    "from": "From",
+    "to": "To",
+    "amount": "Amount",
+    "convert": "Convert",
+    "exchange_rate": "Exchange Rate",
+    "recent_conversions": "Recent Conversions",
+    "swap_currencies": "Swap Currencies"
+  },
+  "chart_screen": {
+    "title": "Currency Charts",
+    "time_periods": {
+      "day": "1D",
+      "week": "1W",
+      "month": "1M",
+      "three_months": "3M",
+      "six_months": "6M",
+      "year": "1Y"
+    },
+    "no_data": "No chart data available"
+  },
+  "currency_list_screen": {
+    "title": "Currencies",
+    "title_currency": "Currency",
+    "search": "Search currencies",
+    "fiat": "Fiat",
+    "crypto": "Crypto",
+    "favorites": "Favorites",
+    "no_favorites": "No favorite currencies added yet",
+    "add_to_favorites": "Add to favorites",
+    "all_currencies": "All Currencies",
+    "all_available": "All Available Currencies",
+    "view_all": "View All Currencies",
+    "add_from_all": "Add some from the All Currencies tab",
+    "all": "All",
+    "no_matching": "No currencies matching \"{query}\"",
+    "no_available": "No currencies available",
+    "set_as_from": "Set as From",
+    "set_as_to": "Set as To"
+  },
+  "settings_screen": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "dark_mode": "Dark Mode",
+    "language": "Language",
+    "haptic_feedback": "Haptic Feedback",
+    "about": "About",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "version": "Version",
+    "preferences": "Preferences"
+  },
+  "navigation": {
+    "convert": "Convert",
+    "charts": "Charts", 
+    "currencies": "Currencies",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "try_again": "Try Again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "done": "Done",
+    "exit_app": "Exit App",
+    "exit_confirmation": "Are you sure you want to exit the app?",
+    "stay": "Stay",
+    "exit": "Exit",
+    "on": "On",
+    "off": "Off",
+    "coming_soon": "Coming Soon",
+    "feature_coming_soon": "The {feature} will be available in a future update.",
+    "ok": "OK",
+    "search": "Search"
+  },
+  "connection_error": {
+    "title": "Connection Error",
+    "message": "Please check your internet connection and try again."
+  },
+  "currency_card": {
+    "amount": "Amount",
+    "from": "From",
+    "to": "To",
+    "exchange_rate": "Exchange Rate:",
+    "converted_amount": "Converted Amount:",
+    "copy": "Copy"
+  },
+  "converter": {
+    "recent_conversions": "Recent Conversions",
+    "clear_all": "Clear All",
+    "no_recent_conversions": "No recent conversions"
+  },
+  "chart": {
+    "error_loading": "Error loading chart data",
+    "try_again": "Try Again",
+    "from_currency": "From Currency",
+    "to_currency": "To Currency",
+    "day": "1 Day",
+    "week": "1 Week",
+    "month": "1 Month",
+    "three_months": "3 Months",
+    "year": "1 Year"
+  },
+  "chart_widget": {
+    "no_data": "No chart data available",
+    "day": "Last 24 Hours",
+    "week": "Last Week",
+    "month": "Last Month", 
+    "three_months": "Last 3 Months",
+    "year": "Last Year"
+  }
+} 

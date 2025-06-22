@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tnchat/themes/theme_provider.dart';
+
+class ThemeAnimationOverlay extends StatefulWidget {
+  static final GlobalKey<_ThemeAnimationOverlayState> overlayKey =
+      GlobalKey<_ThemeAnimationOverlayState>();
+
+  const ThemeAnimationOverlay({super.key});
+
+  @override
+  _ThemeAnimationOverlayState createState() => _ThemeAnimationOverlayState();
+}
+
+class _ThemeAnimationOverlayState extends State<ThemeAnimationOverlay> {
+  OverlayEntry? _overlayEntry;
+
+  void showOverlay(Widget overlayWidget) {
+    // Remove any existing overlay
+    hideOverlay();
+
+    // Create a new overlay entry
+    _overlayEntry = OverlayEntry(
+      builder: (context) => Positioned.fill(
+        child: overlayWidget,
+      ),
+    );
+
+    // Insert the overlay into the overlay state
+    Overlay.of(context).insert(_overlayEntry!);
+  }
+
+  void hideOverlay() {
+    _overlayEntry?.remove();
+    _overlayEntry = null;
+  }
+
+  @override
+  void dispose() {
+    hideOverlay();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox
+        .shrink(); // This widget doesn't render anything itself
+  }
+}
+
+// Extension to make it easier to access the overlay from anywhere
+extension ThemeOverlayExtension on BuildContext {
+  void showThemeOverlay(Widget overlayWidget) {
+    final overlayState = ThemeAnimationOverlay.overlayKey.currentState;
+    if (overlayState != null) {
+      overlayState.showOverlay(overlayWidget);
+    } else {
+      print('Theme animation overlay state is null');
+    }
+  }
+
+  void hideThemeOverlay() {
+    final overlayState = ThemeAnimationOverlay.overlayKey.currentState;
+    if (overlayState != null) {
+      overlayState.hideOverlay();
+    }
+  }
+}

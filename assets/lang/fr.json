@@ -1,0 +1,118 @@
+{
+  "app_name": "CurrEx",
+  "home_screen": {
+    "title": "Convertisseur de Devises",
+    "from": "De",
+    "to": "Vers",
+    "amount": "Montant",
+    "convert": "Convertir",
+    "exchange_rate": "Taux de Change",
+    "recent_conversions": "Conversions Récentes",
+    "swap_currencies": "Échanger les Devises"
+  },
+  "chart_screen": {
+    "title": "Graphiques de Devises",
+    "time_periods": {
+      "day": "1J",
+      "week": "1S",
+      "month": "1M",
+      "three_months": "3M",
+      "six_months": "6M",
+      "year": "1A"
+    },
+    "no_data": "Aucune donnée de graphique disponible"
+  },
+  "currency_list_screen": {
+    "title": "Devises",
+    "title_currency": "Devise",
+    "search": "Rechercher des devises",
+    "fiat": "Monnaie Fiduciaire",
+    "crypto": "Crypto",
+    "favorites": "Favoris",
+    "no_favorites": "Aucune devise favorite ajoutée",
+    "add_to_favorites": "Ajouter aux favoris",
+    "all_currencies": "Toutes les Devises",
+    "all_available": "Toutes les Devises Disponibles",
+    "view_all": "Voir Toutes les Devises",
+    "add_from_all": "Ajoutez-en depuis l'onglet Toutes les Devises",
+    "all": "Tout",
+    "no_matching": "Aucune devise correspondant à \"{query}\"",
+    "no_available": "Aucune devise disponible",
+    "set_as_from": "Définir comme De",
+    "set_as_to": "Définir comme Vers"
+  },
+  "settings_screen": {
+    "title": "Paramètres",
+    "appearance": "Apparence",
+    "dark_mode": "Mode Sombre",
+    "language": "Langue",
+    "haptic_feedback": "Retour Haptique",
+    "about": "À Propos",
+    "privacy_policy": "Politique de Confidentialité",
+    "terms_of_service": "Conditions d'Utilisation",
+    "version": "Version",
+    "preferences": "Préférences"
+  },
+  "navigation": {
+    "convert": "Convertir",
+    "charts": "Graphiques",
+    "currencies": "Devises",
+    "settings": "Paramètres"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "try_again": "Réessayer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "done": "Terminé",
+    "exit_app": "Quitter l'Application",
+    "exit_confirmation": "Êtes-vous sûr de vouloir quitter l'application?",
+    "stay": "Rester",
+    "exit": "Quitter",
+    "on": "Activé",
+    "off": "Désactivé",
+    "coming_soon": "Bientôt Disponible",
+    "feature_coming_soon": "La fonctionnalité {feature} sera disponible dans une prochaine mise à jour.",
+    "ok": "OK",
+    "search": "Rechercher"
+  },
+  "connection_error": {
+    "title": "Erreur de Connexion",
+    "message": "Veuillez vérifier votre connexion Internet et réessayer."
+  },
+  "currency_card": {
+    "amount": "Montant",
+    "from": "De",
+    "to": "Vers",
+    "exchange_rate": "Taux de Change:",
+    "converted_amount": "Montant Converti:",
+    "copy": "Copier"
+  },
+  "converter": {
+    "recent_conversions": "Conversions Récentes",
+    "clear_all": "Tout Effacer",
+    "no_recent_conversions": "Aucune conversion récente"
+  },
+  "chart": {
+    "error_loading": "Erreur de chargement des données",
+    "try_again": "Réessayer",
+    "from_currency": "Devise de Départ",
+    "to_currency": "Devise d'Arrivée",
+    "day": "1 Jour",
+    "week": "1 Semaine",
+    "month": "1 Mois",
+    "three_months": "3 Mois",
+    "year": "1 An"
+  },
+  "chart_widget": {
+    "no_data": "Aucune donnée de graphique disponible",
+    "day": "Dernières 24 Heures",
+    "week": "Dernière Semaine",
+    "month": "Dernier Mois", 
+    "three_months": "3 Derniers Mois",
+    "year": "Dernière Année"
+  }
+} 

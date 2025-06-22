@@ -1,0 +1,181 @@
+import 'package:flutter/material.dart';
+import 'dart:math';
+import 'package:provider/provider.dart';
+import 'package:tnchat/themes/theme_provider.dart';
+
+class ThemeSwitch extends StatefulWidget {
+  const ThemeSwitch({super.key});
+
+  @override
+  _ThemeSwitchState createState() => _ThemeSwitchState();
+}
+
+class _ThemeSwitchState extends State<ThemeSwitch>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _animation;
+  final Duration _animationDuration = const Duration(milliseconds: 500);
+
+  // Store the position of the button for the animation origin
+  Offset? _buttonPosition;
+
+  // Store the previous theme mode
+  bool _wasInDarkMode = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: _animationDuration,
+    );
+
+    _animation = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOutCubic,
+    );
+
+    // Initialize the previous theme mode
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _wasInDarkMode =
+          Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
+    });
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  void _updateButtonPosition(BuildContext context) {
+    final RenderBox box = context.findRenderObject() as RenderBox;
+    _buttonPosition = box.localToGlobal(Offset.zero) +
+        Offset(box.size.width / 2, box.size.height / 2);
+  }
+
+  void _toggleTheme() {
+    // Capture button position for animation origin
+    _updateButtonPosition(context);
+
+    // Get the current theme
+    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    _wasInDarkMode = themeProvider.isDarkMode;
+
+    // Play the animation
+    if (_animationController.status == AnimationStatus.completed) {
+      _animationController.reverse();
+    } else {
+      _animationController.forward();
+    }
+
+    // Toggle the theme halfway through the animation
+    Future.delayed(_animationDuration ~/ 2, () {
+      themeProvider.toggleTheme();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDarkMode = themeProvider.isDarkMode;
+
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return Stack(
+          children: [
+            // Put the theme overlay at the start of the stack
+            if (_buttonPosition != null)
+              ThemeOverlay(
+                animation: _animation,
+                origin: _buttonPosition!,
+                isDarkMode:
+                    !_wasInDarkMode, // Use the opposite of the previous mode
+              ),
+
+            // The actual toggle button on top
+            IconButton(
+              icon: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return ScaleTransition(scale: animation, child: child);
+                },
+                child: isDarkMode
+                    ? const Icon(
+                        Icons.dark_mode_rounded,
+                        key: ValueKey('dark'),
+                        color: Colors.white,
+                      )
+                    : const Icon(
+                        Icons.light_mode_rounded,
+                        key: ValueKey('light'),
+                        color: Colors.amber,
+                      ),
+              ),
+              onPressed: _toggleTheme,
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class ThemeOverlay extends StatelessWidget {
+  final Animation<double> animation;
+  final Offset origin;
+  final bool isDarkMode;
+
+  const ThemeOverlay({
+    super.key,
+    required this.animation,
+    required this.origin,
+    required this.isDarkMode,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // Calculate the maximum radius needed to cover the entire screen
+    final Size screenSize = MediaQuery.of(context).size;
+    final double maxRadius =
+        sqrt(pow(screenSize.width, 2) + pow(screenSize.height, 2));
+
+    return RepaintBoundary(
+      child: CustomPaint(
+        painter: CircleRevealPainter(
+          radius: maxRadius * animation.value,
+          origin: origin,
+          color: isDarkMode
+              ? const Color(0xFF202020) // Dark mode background
+              : const Color(0xFFF1F5F9), // Light mode background
+        ),
+        child: const SizedBox.expand(),
+      ),
+    );
+  }
+}
+
+class CircleRevealPainter extends CustomPainter {
+  final double radius;
+  final Offset origin;
+  final Color color;
+
+  CircleRevealPainter({
+    required this.radius,
+    required this.origin,
+    required this.color,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+
+    canvas.drawCircle(origin, radius, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
