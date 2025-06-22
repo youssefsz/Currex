@@ -238,15 +238,10 @@ class _MainNavigationState extends State<MainNavigation> {
         final screenHeight = MediaQuery.of(context).size.height;
         final screenWidth = MediaQuery.of(context).size.width;
 
-        // Calculate responsive dimensions
-        final double navBarHeight = _calculateNavBarHeight(
-          screenHeight,
-          screenWidth,
-        );
+        // Calculate responsive icon size
         final double iconSize = _calculateIconSize(screenHeight, screenWidth);
 
         return Container(
-          height: navBarHeight,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -257,7 +252,6 @@ class _MainNavigationState extends State<MainNavigation> {
             ],
           ),
           child: NavigationBar(
-            height: navBarHeight,
             labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
             selectedIndex: _selectedIndex,
             onDestinationSelected: _onItemTapped,
@@ -318,27 +312,7 @@ class _MainNavigationState extends State<MainNavigation> {
     );
   }
 
-  // Calculate responsive navigation bar height
-  double _calculateNavBarHeight(double screenHeight, double screenWidth) {
-    // Base height for small screens
-    double baseHeight = 60.0;
 
-    // Scale based on screen height, with reasonable limits
-    if (screenHeight > 800) {
-      baseHeight = 70.0;
-    }
-    if (screenHeight > 900) {
-      baseHeight = 80.0;
-    }
-
-    // Additional scaling for very wide screens (like foldable phones in landscape)
-    if (screenWidth > 600) {
-      baseHeight += 5.0;
-    }
-
-    // Ensure minimum and maximum heights
-    return baseHeight.clamp(60.0, 90.0);
-  }
 
   // Calculate responsive icon size
   double _calculateIconSize(double screenHeight, double screenWidth) {
