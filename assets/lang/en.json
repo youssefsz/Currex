@@ -55,7 +55,7 @@
   },
   "navigation": {
     "convert": "Convert",
-    "charts": "Charts", 
+    "charts": "Charts",
     "currencies": "Currencies",
     "settings": "Settings"
   },
@@ -89,7 +89,8 @@
     "to": "To",
     "exchange_rate": "Exchange Rate:",
     "converted_amount": "Converted Amount:",
-    "copy": "Copy"
+    "copy": "Copy",
+    "copied": "Copied!"
   },
   "converter": {
     "recent_conversions": "Recent Conversions",
@@ -111,8 +112,8 @@
     "no_data": "No chart data available",
     "day": "Last 24 Hours",
     "week": "Last Week",
-    "month": "Last Month", 
+    "month": "Last Month",
     "three_months": "Last 3 Months",
     "year": "Last Year"
   }
-} 
+}

@@ -37,12 +37,31 @@ class CurrencyCard extends StatefulWidget {
   State<CurrencyCard> createState() => _CurrencyCardState();
 }
 
-class _CurrencyCardState extends State<CurrencyCard> {
+class _CurrencyCardState extends State<CurrencyCard>
+    with SingleTickerProviderStateMixin {
   late final TextEditingController _amountController;
+
+  // Copy animation state
+  bool _isCopied = false;
+  late AnimationController _copyAnimationController;
+  late Animation<double> _copyScaleAnimation;
 
   @override
   void initState() {
     super.initState();
+
+    // Initialize copy animation controller
+    _copyAnimationController = AnimationController(
+      duration: const Duration(milliseconds: 200),
+      vsync: this,
+    );
+
+    _copyScaleAnimation = Tween<double>(begin: 1.0, end: 0.8).animate(
+      CurvedAnimation(
+        parent: _copyAnimationController,
+        curve: Curves.easeInOut,
+      ),
+    );
     _amountController = TextEditingController(
       text: _formatAmount(widget.amount),
     );
@@ -51,6 +70,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
   @override
   void dispose() {
     _amountController.dispose();
+    _copyAnimationController.dispose();
     super.dispose();
   }
 
@@ -67,6 +87,36 @@ class _CurrencyCardState extends State<CurrencyCard> {
     return amount == amount.roundToDouble()
         ? amount.toInt().toString()
         : amount.toString();
+  }
+
+  /// Handles the copy action with a subtle animation feedback
+  void _handleCopy(HapticService hapticService) {
+    // Copy to clipboard
+    Clipboard.setData(
+      ClipboardData(text: widget.convertedAmount.toStringAsFixed(6)),
+    );
+
+    // Trigger haptic feedback
+    hapticService.lightImpact();
+
+    // Play the scale animation
+    _copyAnimationController.forward().then((_) {
+      _copyAnimationController.reverse();
+    });
+
+    // Update state to show checkmark
+    setState(() {
+      _isCopied = true;
+    });
+
+    // Reset back to copy icon after delay
+    Future.delayed(const Duration(milliseconds: 1500), () {
+      if (mounted) {
+        setState(() {
+          _isCopied = false;
+        });
+      }
+    });
   }
 
   @override
@@ -439,17 +489,41 @@ class _CurrencyCardState extends State<CurrencyCard> {
                       ),
                     ),
                     const SizedBox(width: 4),
-                    OutlinedButton.icon(
-                      icon: const Icon(Icons.content_copy, size: 16),
-                      label: Text(L.tr('currency_card.copy')),
-                      onPressed: () {
-                        Clipboard.setData(
-                          ClipboardData(
-                            text: widget.convertedAmount.toStringAsFixed(6),
+                    ScaleTransition(
+                      scale: _copyScaleAnimation,
+                      child: OutlinedButton.icon(
+                        icon: AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 200),
+                          transitionBuilder: (child, animation) {
+                            return ScaleTransition(
+                              scale: animation,
+                              child: child,
+                            );
+                          },
+                          child: Icon(
+                            _isCopied ? Icons.check : Icons.content_copy,
+                            key: ValueKey<bool>(_isCopied),
+                            size: 16,
+                            color:
+                                _isCopied
+                                    ? Colors.green
+                                    : theme.colorScheme.primary,
                           ),
-                        );
-                        hapticService.lightImpact();
-                      },
+                        ),
+                        label: AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 200),
+                          child: Text(
+                            _isCopied
+                                ? L.tr('currency_card.copied')
+                                : L.tr('currency_card.copy'),
+                            key: ValueKey<bool>(_isCopied),
+                            style: TextStyle(
+                              color: _isCopied ? Colors.green : null,
+                            ),
+                          ),
+                        ),
+                        onPressed: () => _handleCopy(hapticService),
+                      ),
                     ),
                   ],
                 ),
