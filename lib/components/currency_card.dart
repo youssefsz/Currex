@@ -296,10 +296,7 @@ class _CurrencyCardState extends State<CurrencyCard>
                 desktop: 32.0,
               ),
             ),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.primary.withOpacity(0.1),
-              shape: BoxShape.circle,
-            ),
+
             child: _buildSwapButton(hapticService, theme),
           ),
 
@@ -340,10 +337,7 @@ class _CurrencyCardState extends State<CurrencyCard>
               width: 48,
               height: 48,
               margin: const EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                color: theme.colorScheme.primary.withOpacity(0.1),
-                shape: BoxShape.circle,
-              ),
+
               child: _buildSwapButton(hapticService, theme),
             ),
           ),
@@ -380,9 +374,9 @@ class _CurrencyCardState extends State<CurrencyCard>
               color: theme.colorScheme.primary,
               size: ResponsiveHelper.getAdaptiveValue(
                 context: context,
-                mobile: 24.0,
-                tablet: 28.0,
-                desktop: 32.0,
+                mobile: 32.0,
+                tablet: 40.0,
+                desktop: 48.0,
               ),
             ),
           );

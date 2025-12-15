@@ -3,7 +3,7 @@ import 'dart:io' show exit;
 import 'package:provider/provider.dart';
 
 import 'home_screen.dart';
-import 'chart_screen.dart';
+// import 'chart_screen.dart';
 import 'currency_list_overview_screen.dart';
 import 'settings_screen.dart';
 import '../utilities/haptic_service.dart';
@@ -50,7 +50,7 @@ class _MainNavigationState extends State<MainNavigation> {
   // List of screens to display
   final List<Widget> _screens = const [
     HomeScreen(),
-    ChartScreen(),
+    // ChartScreen(),
     CurrencyListOverviewScreen(),
     SettingsScreen(),
   ];
@@ -175,21 +175,21 @@ class _MainNavigationState extends State<MainNavigation> {
                     ),
                     label: Text(L.tr('navigation.convert')),
                   ),
-                  NavigationRailDestination(
-                    icon: Image.asset(
-                      isDarkMode
-                          ? 'assets/icons/not_selected_chart.png'
-                          : 'assets/icons/selected_chart.png',
-                      width: _calculateRailIconSize(context),
-                      height: _calculateRailIconSize(context),
-                    ),
-                    selectedIcon: Image.asset(
-                      'assets/icons/selected_chart.png',
-                      width: _calculateRailIconSize(context),
-                      height: _calculateRailIconSize(context),
-                    ),
-                    label: Text(L.tr('navigation.charts')),
-                  ),
+                  // NavigationRailDestination(
+                  //   icon: Image.asset(
+                  //     isDarkMode
+                  //         ? 'assets/icons/not_selected_chart.png'
+                  //         : 'assets/icons/selected_chart.png',
+                  //     width: _calculateRailIconSize(context),
+                  //     height: _calculateRailIconSize(context),
+                  //   ),
+                  //   selectedIcon: Image.asset(
+                  //     'assets/icons/selected_chart.png',
+                  //     width: _calculateRailIconSize(context),
+                  //     height: _calculateRailIconSize(context),
+                  //   ),
+                  //   label: Text(L.tr('navigation.charts')),
+                  // ),
                   NavigationRailDestination(
                     icon: Image.asset(
                       isDarkMode
@@ -271,21 +271,21 @@ class _MainNavigationState extends State<MainNavigation> {
                 ),
                 label: L.tr('navigation.convert'),
               ),
-              NavigationDestination(
-                icon: Image.asset(
-                  isDarkMode
-                      ? 'assets/icons/not_selected_chart.png'
-                      : 'assets/icons/selected_chart.png',
-                  width: iconSize,
-                  height: iconSize,
-                ),
-                selectedIcon: Image.asset(
-                  'assets/icons/selected_chart.png',
-                  width: iconSize,
-                  height: iconSize,
-                ),
-                label: L.tr('navigation.charts'),
-              ),
+              // NavigationDestination(
+              //   icon: Image.asset(
+              //     isDarkMode
+              //         ? 'assets/icons/not_selected_chart.png'
+              //         : 'assets/icons/selected_chart.png',
+              //     width: iconSize,
+              //     height: iconSize,
+              //   ),
+              //   selectedIcon: Image.asset(
+              //     'assets/icons/selected_chart.png',
+              //     width: iconSize,
+              //     height: iconSize,
+              //   ),
+              //   label: L.tr('navigation.charts'),
+              // ),
               NavigationDestination(
                 icon: Image.asset(
                   isDarkMode
@@ -311,8 +311,6 @@ class _MainNavigationState extends State<MainNavigation> {
       },
     );
   }
-
-
 
   // Calculate responsive icon size
   double _calculateIconSize(double screenHeight, double screenWidth) {

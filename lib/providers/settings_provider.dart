@@ -1,3 +1,4 @@
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:flutter/material.dart';
 import '../utilities/storage_service.dart';
 import '../utilities/haptic_service.dart';
@@ -11,11 +12,14 @@ class SettingsProvider extends ChangeNotifier {
   late LocalizationProvider _localizationProvider;
   final ThemeService _themeService = ThemeService();
 
+  String _appVersion = '1.0.0';
+
   // Getters
   bool get isHapticEnabled => _hapticService.isEnabled;
   bool get isDarkMode => _themeService.isDarkMode;
   String get currentLanguage => _localizationProvider.currentLanguage;
   Map<String, String> get availableLanguages => LanguageService.languages;
+  String get appVersion => _appVersion;
 
   // Set localization provider only if it hasn't been set before
   void setLocalizationProvider(LocalizationProvider provider) {
@@ -37,7 +41,13 @@ class SettingsProvider extends ChangeNotifier {
 
   // Initialize provider
   Future<void> init() async {
-    // Nothing to initialize here as individual services handle their own initialization
+    try {
+      final packageInfo = await PackageInfo.fromPlatform();
+      _appVersion = packageInfo.version;
+      notifyListeners();
+    } catch (e) {
+      debugPrint('Error getting package info: $e');
+    }
   }
 
   // Toggle haptic feedback

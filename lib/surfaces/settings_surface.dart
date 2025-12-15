@@ -141,7 +141,7 @@ class SettingsSurface extends StatelessWidget {
                 L.tr('settings_screen.version'),
                 Icons.build_outlined,
                 trailing: Text(
-                  '1.0.0',
+                  settingsProvider.appVersion,
                   style: TextStyle(
                     color: isDarkMode ? Colors.grey[400] : Colors.grey[600],
                   ),
@@ -185,10 +185,6 @@ class SettingsSurface extends StatelessWidget {
           // Icon
           Container(
             padding: const EdgeInsets.all(8.0),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.primary.withOpacity(0.1),
-              shape: BoxShape.circle,
-            ),
             child: Icon(icon, color: theme.colorScheme.primary, size: 20.0),
           ),
           const SizedBox(width: 16.0),
@@ -230,10 +226,6 @@ class SettingsSurface extends StatelessWidget {
             // Icon
             Container(
               padding: const EdgeInsets.all(8.0),
-              decoration: BoxDecoration(
-                color: theme.colorScheme.primary.withOpacity(0.1),
-                shape: BoxShape.circle,
-              ),
               child: Icon(icon, color: theme.colorScheme.primary, size: 20.0),
             ),
             const SizedBox(width: 16.0),
