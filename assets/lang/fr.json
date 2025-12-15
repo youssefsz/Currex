@@ -89,7 +89,8 @@
     "to": "Vers",
     "exchange_rate": "Taux de Change:",
     "converted_amount": "Montant Converti:",
-    "copy": "Copier"
+    "copy": "Copier",
+    "copied": "Copié!"
   },
   "converter": {
     "recent_conversions": "Conversions Récentes",
@@ -111,8 +112,8 @@
     "no_data": "Aucune donnée de graphique disponible",
     "day": "Dernières 24 Heures",
     "week": "Dernière Semaine",
-    "month": "Dernier Mois", 
+    "month": "Dernier Mois",
     "three_months": "3 Derniers Mois",
     "year": "Dernière Année"
   }
-} 
+}
