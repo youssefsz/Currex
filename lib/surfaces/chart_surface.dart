@@ -288,7 +288,7 @@ class _ChartSurfaceState extends State<ChartSurface> {
             color:
                 isSelected
                     ? theme.colorScheme.primary
-                    : theme.colorScheme.onBackground,
+                    : theme.colorScheme.onSurface,
           ),
         ),
       ),

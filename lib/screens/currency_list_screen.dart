@@ -46,12 +46,8 @@ class _CurrencyListScreenState extends State<CurrencyListScreen>
           appBar: AppBar(
             title: Text(
               widget.isFromCurrency
-                  ? L.tr('home_screen.from') +
-                      ' ' +
-                      L.tr('currency_list_screen.title_currency')
-                  : L.tr('home_screen.to') +
-                      ' ' +
-                      L.tr('currency_list_screen.title_currency'),
+                  ? '${L.tr('home_screen.from')} ${L.tr('currency_list_screen.title_currency')}'
+                  : '${L.tr('home_screen.to')} ${L.tr('currency_list_screen.title_currency')}',
             ),
             bottom: TabBar(
               controller: _tabController,

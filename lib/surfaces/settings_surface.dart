@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../providers/settings_provider.dart';
 import '../components/language_selector.dart';
 import '../components/theme_toggle.dart';

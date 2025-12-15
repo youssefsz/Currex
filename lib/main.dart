@@ -16,7 +16,6 @@ import 'utilities/storage_service.dart';
 import 'utilities/theme_service.dart';
 import 'utilities/responsive_helper.dart';
 import 'utilities/screen_capture_provider.dart';
-import 'utilities/theme_animation_overlay.dart';
 import 'theme/app_theme.dart';
 
 void main() async {

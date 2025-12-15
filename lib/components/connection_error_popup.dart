@@ -29,7 +29,7 @@ class ConnectionErrorPopup extends StatelessWidget {
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       backgroundColor:
-          isDarkMode ? theme.colorScheme.surface : theme.colorScheme.background,
+          isDarkMode ? theme.colorScheme.surface : theme.colorScheme.surface,
       title: Row(
         children: [
           Icon(
